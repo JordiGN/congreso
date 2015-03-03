@@ -33,6 +33,12 @@ class Prueba extends CI_Controller {
 		$this->load->view("vista3");
 	}
 
+		public function eventos()
+	{
+		
+		$this->load->view("eventos");
+	}
+
 }
 
 /* End of file welcome.php */
