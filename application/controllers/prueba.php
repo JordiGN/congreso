@@ -39,6 +39,14 @@ class Prueba extends CI_Controller {
 		$this->load->view("eventos");
 	}
 
+		public function AltaEventos()
+	{
+		
+		echo "<pre>";
+		print_r($_POST);
+		echo "</pre>";
+	}
+
 }
 
 /* End of file welcome.php */
