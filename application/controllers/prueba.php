@@ -40,6 +40,11 @@ class Prueba extends CI_Controller {
 		$this->load->view("eventos");
 	}
 
+	public function Ponentes()
+	{
+		$this->load->view("ponentes");
+	}
+
 		public function AltaEventos()//Aqui se recibe lo que se envio del formulairo
 	{
 		$datos['nombre']=$this->input->post('nom');
@@ -48,12 +53,11 @@ class Prueba extends CI_Controller {
 		$datos['hora'] =$this->input->post('hora');
 		$datos['costo'] =$this->input->post('costo');
 
-		$this->m_congreso->agregaCongreso();
-
-		echo "<pre>";
-		print_r($_POST);
-		echo "</pre>";
+		$this->m_congreso->agregaCongreso($datos);
+		//$datos[]		
 	}
+
+
 
 }
 

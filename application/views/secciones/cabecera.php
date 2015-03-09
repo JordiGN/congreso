@@ -37,6 +37,7 @@
       <ul class="nav navbar-nav">
       <li class="active"><a href="<?php echo base_url('index.php/prueba/eventos'); ?>">Evento <span class="sr-only">(current)</span></a></li>
         <li class="active"><a href="#">Conferencias <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="<?php echo base_url('index.php/prueba/ponentes'); ?>">Ponentes <span class="sr-only">(current)</span></a></li>
         <li><a href="#">Talleres</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
