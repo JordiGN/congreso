@@ -54,6 +54,33 @@ class Prueba extends CI_Controller {
 		$datos['costo'] =$this->input->post('costo');
 
 		$this->m_congreso->agregaCongreso($datos);
+		$datos['mensaje']='Alta evento exitosa';
+		$datos['ruta']="index.php/prueba/eventos";
+		$this->load->view('mensaje',$datos);
+		//$datos[]		
+	}
+
+	public function AltaPonentes()
+	{
+		$this->form_validation->set_rules('nom','Nombre','required');
+
+		if($this->form_validation->run()==FALSE)
+		{
+			$this->load->view('ponentes');
+		}
+		else
+		{	
+			$datos['nombre']=$this->input->post('nom');
+			$datos['correo'] =$this->input->post('correo');
+			$datos['telefono'] =$this->input->post('tel');
+			$datos['domicilio'] =$this->input->post('dom');
+
+			$this->m_congreso->agregaPonente($datos);
+			$datos['mensaje']='Alta de ponente exitosa';
+			$datos['ruta']="index.php/prueba/ponentes";
+			$this->load->view('mensaje',$datos);
+		}
+
 		//$datos[]		
 	}
 
