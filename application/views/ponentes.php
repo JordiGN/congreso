@@ -1,9 +1,9 @@
-<?php    include "/secciones/cabecera.php";?>
+<?php    include "/secciones/encabezado.php";?>
 	
 <div class="container">
 <div class="row">
 	<h1>Registro de ponente</h1>
-	<form action="index.php/prueba/AltaEventos" method="post" >
+	<form action="index.php/prueba/AltaPonentes" method="post" >
 		<div class="form-group">
 			<form action="">
 				<div class="form-group">
@@ -29,7 +29,7 @@
 </div>
 	<?php   include "/secciones/pie.php";	 ?>
 
-	<div>
+	/*<div>
 		<div class="col-md-4">Prueba</div>
 		<div class="col-md-8">Probar</div>
-	</div>
+	</div>*/
