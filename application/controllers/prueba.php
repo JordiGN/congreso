@@ -62,7 +62,11 @@ class Prueba extends CI_Controller {
 
 	public function AltaPonentes()
 	{
+		$this->form_validation->set_message('required','El campo %s es requerido');
 		$this->form_validation->set_rules('nom','Nombre','required');
+		$this->form_validation->set_rules('correo','Correo','required|valid_email');
+		
+
 
 		if($this->form_validation->run()==FALSE)
 		{

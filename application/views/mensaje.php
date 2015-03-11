@@ -1,4 +1,4 @@
-<?php include "/secciones/encabezado.php" ?>
+<?php include "/secciones/cabecera.php" ?>
 
 <div class="container">
 	<div class="row">
