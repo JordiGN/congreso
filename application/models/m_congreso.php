@@ -12,4 +12,10 @@ class M_congreso extends CI_Model{
 	function agregaPonente($datos){
 		$this->db->insert('ponente',$datos);		
 	}
+
+	function getPonentes()
+	{
+		$query=$this->db->get('ponente');
+		return $query->result_array();
+	}
 }
