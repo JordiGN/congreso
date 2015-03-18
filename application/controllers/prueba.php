@@ -1,6 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Prueba extends CI_Controller {
+class Prueba extends CI_Controller 
+{
 	
 	function __construct(){
 		parent::__construct();
@@ -93,7 +94,27 @@ class Prueba extends CI_Controller {
 			$this->showPonentes();
 		}
 
+
+
 		//$datos[]		
+	}
+
+	function borraPonente($id)
+	{
+		$this->m_congreso->borraPonente($id);
+		$this->showPonentes();
+	}
+
+	function editaPonente($id)
+	{
+		$datos_ponente=$this->m_congreso->getPonente($id);
+		$datos['ponente']=$datos_ponente[0];
+		$this->load->view('editPonente',$datos);
+	}
+
+	function actualizaPonente()
+	{
+		
 	}
 
 

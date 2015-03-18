@@ -7,6 +7,7 @@
 			<th>Correo</th>
 			<th>Telefono</th>
 			<th>Domicilio</th>
+			<th></th>
 		</tr>
 		<?php 
 		if(count($datos)==0) echo "No hay ponentes registrados";
@@ -16,7 +17,12 @@
 			echo "<td>".$value['correo']."</td>";
 			echo "<td>".$value['telefono']."</td>";
 			echo "<td>".$value['domicilio']."</td>";
-			echo "<tr>";
+			echo "<td><a href='index.php/prueba/editaPonente/".$value['idponente']."'>Editar<a/>
+			<a href='index.php/prueba/borraPonente/".$value['idponente']."'>Eliminar<a/>
+
+			</td>";
+			
+			echo "</tr>";
 			# code...
 		}
 
