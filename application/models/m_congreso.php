@@ -30,6 +30,11 @@ class M_congreso extends CI_Model{
 	 	$this->db->where('idponente',$id);
 	 	$query=$this->db->get('ponente');
 	 	return $query->result_array();
+	 }
 
+	 function actPonente($datos,$id)
+	 {
+	 	$this->db->where('idponente',$id);
+	 	$this->db->update('ponente',$datos);
 	 }
 }

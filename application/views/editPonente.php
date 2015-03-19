@@ -4,6 +4,7 @@
 <div class="row">
 	<h1>Editat datos del ponente</h1>
 	<form action="index.php/prueba/actualizaPonente" method="post" >
+	<input type="hidden" name="id" value="<?php echo $ponente['idponente']?>">
 		<div class="form-group">
 			<form action="">
 			<div class="col-md-4">

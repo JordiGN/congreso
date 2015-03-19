@@ -109,12 +109,23 @@ class Prueba extends CI_Controller
 	{
 		$datos_ponente=$this->m_congreso->getPonente($id);
 		$datos['ponente']=$datos_ponente[0];
+
 		$this->load->view('editPonente',$datos);
 	}
 
 	function actualizaPonente()
 	{
+		$id=$this->input->post('id');
+
+		$datos['nombre']=$this->input->post('nom');
+		$datos['correo'] =$this->input->post('correo');
+		$datos['telefono'] =$this->input->post('tel');
+		$datos['domicilio'] =$this->input->post('dom');
+
 		
+		$this->m_congreso->actPonente($datos,$id);
+		$this->showPonentes();
+
 	}
 
 

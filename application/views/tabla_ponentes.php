@@ -17,8 +17,12 @@
 			echo "<td>".$value['correo']."</td>";
 			echo "<td>".$value['telefono']."</td>";
 			echo "<td>".$value['domicilio']."</td>";
-			echo "<td><a href='index.php/prueba/editaPonente/".$value['idponente']."'>Editar<a/>
-			<a href='index.php/prueba/borraPonente/".$value['idponente']."'>Eliminar<a/>
+			echo "<td><a href='index.php/prueba/editaPonente/".$value['idponente']."'>
+				<span class='glyphicon glyphicon-pencil' aria-hidden='true'></span>
+			<a/>
+			<a href='index.php/prueba/borraPonente/".$value['idponente']."'>
+				<span class='glyphicon glyphicon-trash' aria-hidden='true'
+			<a/>
 
 			</td>";
 			
