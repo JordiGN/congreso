@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<base href="<?php echo base_url(); ?>"> 
+	<base href="<?php echo base_url(); ?>">
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,7 +36,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
       <li class="active"><a href="<?php echo base_url('index.php/prueba/eventos'); ?>">Evento <span class="sr-only">(current)</span></a></li>
-        <li class="active"><a href="#">Conferencias <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="<?php echo base_url('index.php/prueba/agregaConferencia'); ?>">Conferencias <span class="sr-only">(current)</span></a></li>
         <li class="active"><a href="<?php echo base_url('index.php/prueba/showPonentes'); ?>">Ponentes <span class="sr-only">(current)</span></a></li>
         <li><a href="#">Talleres</a></li>
         <li class="dropdown">
@@ -52,7 +52,7 @@
           </ul>
         </li>
       </ul>
-<!-- 
+<!--
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Link</a></li>
         <li class="dropdown">

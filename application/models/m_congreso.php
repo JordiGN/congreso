@@ -10,7 +10,7 @@ class M_congreso extends CI_Model{
 
 	}
 	function agregaPonente($datos){
-		$this->db->insert('ponente',$datos);		
+		$this->db->insert('ponente',$datos);
 	}
 
 	function getPonentes()
@@ -36,5 +36,13 @@ class M_congreso extends CI_Model{
 	 {
 	 	$this->db->where('idponente',$id);
 	 	$this->db->update('ponente',$datos);
+	 }
+	 function getUEvento()
+	 {
+	 	$this->db->order_by('idevento','desc');
+	 	$this->db->limit(1);
+	 	$query=$this->db->get('evento');
+
+	 	return $query->result_array();
 	 }
 }

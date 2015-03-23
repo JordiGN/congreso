@@ -1,8 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Prueba extends CI_Controller 
+class Prueba extends CI_Controller
 {
-	
+
 	function __construct(){
 		parent::__construct();
 		$this->load->model('m_congreso'); //el modelo es el nombre del archivo phxp
@@ -19,25 +19,25 @@ class Prueba extends CI_Controller
 
 	public function opcion1()
 	{
-		
+
 		$this->load->view("vista1");
 	}
 
 	public function opcion2()
 	{
-		
+
 		$this->load->view('vista2');
 	}
 
 	public function opcion3()
 	{
-		
+
 		$this->load->view("vista3");
 	}
 
 		public function eventos()
 	{
-		
+
 		$this->load->view("eventos");
 	}
 
@@ -48,7 +48,7 @@ class Prueba extends CI_Controller
 	public function showPonentes()
 	{
 		$ponentes=$this->m_congreso->getPonentes();
-		
+
 		$this->load->view('tabla_ponentes',array("datos"=>$ponentes));
 		//$info['datos']=$ponentes;
 		//$this->load->view('tabla_ponentes',$info);
@@ -67,7 +67,7 @@ class Prueba extends CI_Controller
 		$datos['mensaje']='Alta evento exitosa';
 		$datos['ruta']="index.php/prueba/eventos";
 		$this->load->view('mensaje',$datos);
-		//$datos[]		
+		//$datos[]
 	}
 
 	public function AltaPonentes()
@@ -76,7 +76,7 @@ class Prueba extends CI_Controller
 		$this->form_validation->set_message('valid_email','No es una dirección valia');
 		$this->form_validation->set_rules('nom','Nombre','required');
 		$this->form_validation->set_rules('correo','Correo','required|valid_email');
-		
+
 
 
 		if($this->form_validation->run()==FALSE)
@@ -84,7 +84,7 @@ class Prueba extends CI_Controller
 			$this->load->view('ponentes');
 		}
 		else
-		{	
+		{
 			$datos['nombre']=$this->input->post('nom');
 			$datos['correo'] =$this->input->post('correo');
 			$datos['telefono'] =$this->input->post('tel');
@@ -96,7 +96,7 @@ class Prueba extends CI_Controller
 
 
 
-		//$datos[]		
+		//$datos[]
 	}
 
 	function borraPonente($id)
@@ -122,11 +122,40 @@ class Prueba extends CI_Controller
 		$datos['telefono'] =$this->input->post('tel');
 		$datos['domicilio'] =$this->input->post('dom');
 
-		
+
 		$this->m_congreso->actPonente($datos,$id);
 		$this->showPonentes();
 
 	}
+	function getUEvento()
+	{
+		$this->db->order('idevento','desc');
+		$this->db->limit(1);
+		$query = $this->db->get('evento');
+
+		return $query->result_array();
+	}
+
+	function agregaConferencia()
+	{
+		//obtener lista de ponentes
+		//obtenet id del ultimo evento(avento actual)
+		//pasar estos datos a la vista
+		$ponentes=$this->m_congreso->getPonentes();
+		$evento=$this->m_congreso->getUEvento();
+		$datos['ponentes']=$ponentes;
+		$datos['evento']=$evento[0];
+
+		$this->load->view('conferencia',$datos);
+	}
+
+	function grabaConferencia()
+	{
+
+	}
+
+
+
 
 
 
