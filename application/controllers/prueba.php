@@ -151,6 +151,15 @@ class Prueba extends CI_Controller
 
 	function grabaConferencia()
 	{
+		$datos['nombre']=$this->input->post('nom');
+		$datos['lugar']=$this->input->post('lugar');
+		$datos['hora'] =$this->input->post('hora');
+		$datos['fecha'] =$this->input->post('fecha');
+		$datos['ponente_idponente'] =$this->input->post('ponente');
+		$datos['evento_idevento'] =$this->input->post('idevento');
+
+		$this->m_congreso->guardaConferencia($datos);
+
 
 	}
 

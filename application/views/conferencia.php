@@ -22,7 +22,7 @@ include "/secciones/pie.php"; ?>
 					<select name="ponente" class="form-control" placeholder="Nombre del ponente">
 						<?php
 							foreach ($ponentes as $key => $ponente) {?>
-								<option value="" id="<?php echo $ponente['idponente'] ?>">
+								<option value="<?php echo $ponente['idponente'] ?>">
 										<?php echo $ponente['nombre'] ?>
 								</option>
 						<?php }
@@ -32,18 +32,19 @@ include "/secciones/pie.php"; ?>
 				</div>
 				<div class="form-group">
 					<label for="evento">Evento</label>
-					<input type="text" name="evento" class="form-control" value="<?php echo $evento['nombre'] ?>" disabled>
+					<input type="text" name="evento" class="form-control" value="<?php echo $evento['nombre'] ?>" readonly >
 				</div>
-				<input type="hidden" name="idevento" value="">
+
+				<input type="hidden" name="idevento" value="<?php echo $evento['idevento'] ?>">
 				<div class="form-group">
 					<label for="fecha">Fecha</label>
 					<input type="text" name="fecha" class="form-control" placeholder="dd/mm/aa">
 				</div>
 				<div class="form-group">
 					<label for="hora">Hora</label>
-					<input type="text" name="Hora" class="form-control" placeholder="hh:mm">
+					<input type="text" name="hora" class="form-control" placeholder="hh:mm">
 				</div>
-				<button type="submit" class="btn btn-default">Enviar</button>
+				<button type="submit" class="pull-right btn btn-default">Enviar</button>
 			</form>
 		</div>
 

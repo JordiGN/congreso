@@ -45,4 +45,8 @@ class M_congreso extends CI_Model{
 
 	 	return $query->result_array();
 	 }
+	 function guardaConferencia($datos)
+	 {
+	 		$this->db->insert('conferencia',$datos);
+	 }
 }
