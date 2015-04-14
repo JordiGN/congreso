@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+  <script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
 	<base href="<?php echo base_url(); ?>">
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,7 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,9 +38,11 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
       <li class="active"><a href="<?php echo base_url('index.php/prueba/eventos'); ?>">Evento <span class="sr-only">(current)</span></a></li>
-        <li class="active"><a href="<?php echo base_url('index.php/prueba/agregaConferencia'); ?>">Conferencias <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="<?php echo base_url('index.php/prueba/showConferencia'); ?>">Conferencias <span class="sr-only">(current)</span></a></li>
         <li class="active"><a href="<?php echo base_url('index.php/prueba/showPonentes'); ?>">Ponentes <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Talleres</a></li>
+        <li><a href="<?php echo base_url('index.php/prueba/Talleres'); ?>">Talleres<span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Instructores</a></li>
+        <li><a href="#">Participante</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">

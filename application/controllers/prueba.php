@@ -159,10 +159,26 @@ class Prueba extends CI_Controller
 		$datos['evento_idevento'] =$this->input->post('idevento');
 
 		$this->m_congreso->guardaConferencia($datos);
-
-
 	}
 
+	function editaConferencia()
+	{
+
+	}
+	function showConferencia()
+	{
+		$conferencias=$this->m_congreso->getConferencia();
+		foreach ($conferencias as $key => $value) {
+			# code...
+		}
+		$this->load->view('tabla_conferencias',array("datos"=>$conferencias));
+		//$info['datos']=$ponentes;
+		//$this->load->view('tabla_ponentes',$info);
+	}
+	public function Talleres()
+	{
+		$this->load->view("talleres");
+	}
 
 
 
