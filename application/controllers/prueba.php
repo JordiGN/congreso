@@ -12,9 +12,7 @@ class Prueba extends CI_Controller
 
 	public function index()
 	{
-		$datos['nombre']="Juan Perez";
-
-		$this->load->view('inicio',$datos);
+		$this->load->view('login');
 	}
 
 	public function opcion1()
@@ -178,6 +176,21 @@ class Prueba extends CI_Controller
 	public function Talleres()
 	{
 		$this->load->view("talleres");
+	}
+
+	function login(){
+		$usuario=$this->input->post('usuario');
+		$clave=$this->input->post('clave');
+
+		$res=$this->m_congreso->validarUsuario($usuario,$clave);
+		print_r($res);
+		if (!empty($res))
+		{
+			$this->load->view('inicio');
+		}
+		else{
+			$this->load->view('login');
+		}
 	}
 
 
