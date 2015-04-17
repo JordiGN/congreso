@@ -35,8 +35,13 @@ class Prueba extends CI_Controller
 
 		public function eventos()
 	{
+		if (! $this->validaSesion())
+		{
+			redirect('prueba');
+		}
+		$this->load->view('evento');
 
-		$this->load->view("eventos");
+		//$this->load->view("eventos");
 	}
 
 	public function Ponentes()
@@ -179,25 +184,40 @@ class Prueba extends CI_Controller
 	}
 
 	function login(){
-		$usuario=$this->input->post('usuario');
+		$cuenta=$this->input->post('cuenta');
 		$clave=$this->input->post('clave');
 
-		$res=$this->m_congreso->validarUsuario($usuario,$clave);
+		$res=$this->m_congreso->validarUsuario($cuenta,$clave);
 		print_r($res);
 		if (!empty($res))
 		{
+			$datos=array('cuenta' =>$res[0]['cuenta'],
+				'nombre' =>$res[0]['nombre'],
+				'categoria' =>$res[0]['categoria']);
+			$this->session->set_userdata();
 			$this->load->view('inicio');
 		}
 		else{
 			$this->load->view('login');
 		}
 	}
-
-
-
-
-
+	function validaSesion()
+	{
+		if ($this->session->userdata('cuenta')!=null)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 }
+
+
+
+
+
 
 /* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */

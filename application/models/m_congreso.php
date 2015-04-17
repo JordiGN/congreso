@@ -55,8 +55,8 @@ class M_congreso extends CI_Model{
 	 	return $query->result_array();
 	 }
 
-	 function validarUsuario($usuario,$clave){
-	 	$this->db->where('nombre',$usuario);
+	 function validarUsuario($cuenta,$clave){
+	 	$this->db->where('cuenta',$cuenta);
 	 	$this->db->where('clave',$clave);
 
 	 	$query=$this->db->get('usuarios');

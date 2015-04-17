@@ -2,8 +2,8 @@
 
 <div class="container">
   <form action="index.php/prueba/login" method="post">
-    <label for="usuario">Nombre de usuario</label>
-    <input type="text" name="usuario" placeholder="Nombre de usuario">
+    <label for="cuenta">Cuenta</label>
+    <input type="text" name="cuenta" placeholder="Cuenta de usuario">
     <label for="clave">Clave</label>
     <input type="text" name="clave" placeholder="Clave de usuario">
     <button type="submit">Validar</button>
