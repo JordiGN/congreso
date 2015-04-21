@@ -201,6 +201,11 @@ class Prueba extends CI_Controller
             return false;
         }
 	}
+	function cierraSesion()
+	{
+		$this->session->sess_destroy();
+		redirect('prueba');
+	}
 }
 
 

@@ -61,7 +61,12 @@
 
    <?php   if ($this->session->userdata('cuenta') != null):?>
               <ul class="nav navbar-nav navbar-right">
-                <li><a><?php echo $this->session->userdata('cuenta'); ?></a></li>
+                <li>
+                  <a href="index.php/prueba/cierraSesion">
+                    <?php echo $this->session->userdata('nombre'); ?>
+                      <span class='glyphicon glyphicon-log-out' aria-hidden='true'></span>
+                    </a>
+                </li>
               </ul>
             <?php
             endif ?>
