@@ -12,37 +12,28 @@ class Prueba extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('login');
-	}
+		if (! $this->validaSesion())
+		{
+			$this->load->view('login');
+		}
+		$this->load->view('inicio');
 
-	public function opcion1()
-	{
-
-		$this->load->view("vista1");
-	}
-
-	public function opcion2()
-	{
-
-		$this->load->view('vista2');
-	}
-
-	public function opcion3()
-	{
-
-		$this->load->view("vista3");
 	}
 
 		public function eventos()
 	{
-		if (! $this->validaSesion())
+		if (!$this->validaSesion())
 		{
-			redirect('prueba');
+			redirect('prueba/login');
 		}
-		$this->load->view('evento');
+
+		$this->load->view('eventos');
+
+	}
+
 
 		//$this->load->view("eventos");
-	}
+
 
 	public function Ponentes()
 	{
@@ -191,10 +182,10 @@ class Prueba extends CI_Controller
 		print_r($res);
 		if (!empty($res))
 		{
-			$datos=array('cuenta' =>$res[0]['cuenta'],
-				'nombre' =>$res[0]['nombre'],
-				'categoria' =>$res[0]['categoria']);
-			$this->session->set_userdata();
+			$datos=array('cuenta'=>$res[0]['cuenta'],
+										'nombre'=>$res[0]['nombre'],
+										'categoria'=>$res[0]['categoria']);
+			$this->session->set_userdata($datos);
 			$this->load->view('inicio');
 		}
 		else{
@@ -203,14 +194,12 @@ class Prueba extends CI_Controller
 	}
 	function validaSesion()
 	{
-		if ($this->session->userdata('cuenta')!=null)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+		if ($this->session->userdata('cuenta') != '') {
+            return true;
+        }
+        else {
+            return false;
+        }
 	}
 }
 

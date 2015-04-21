@@ -56,6 +56,19 @@
           </ul>
         </li>
       </ul>
+
+
+
+   <?php   if ($this->session->userdata('cuenta') != null):?>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a><?php echo $this->session->userdata('cuenta'); ?></a></li>
+              </ul>
+            <?php
+            endif ?>
+
+
+
+
 <!--
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Link</a></li>

@@ -1,6 +1,7 @@
+<?php  include "/secciones/cabecera.php";?>
 <div class="container" id="inicio">
     <?php
-    include "/secciones/cabecera.php";
+
 
 		echo "<h1>Hola mundo</h1> <br>";
 		echo "Hoy es: ".date("d-m-y");
@@ -12,10 +13,7 @@
 	<a href="index.php/prueba/opcion2">opcion 2</a>
 	<a href="index.php/prueba/opcion3">opcion 3</a>
 	<a href="http://www.itcolima.edu.mx">Tec De Colima xD</a>
-	<?php
 
-  include "/secciones/pie.php";
-	 ?>
 <div class="row">
 	<div class="col-md-8 col-sm-4 rojo">
 		<h3>Hi world</h3>
@@ -26,3 +24,6 @@
 </div>
 
 </div>
+<?php
+  include "/secciones/pie.php";
+	 ?>
