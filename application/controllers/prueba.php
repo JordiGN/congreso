@@ -16,7 +16,10 @@ class Prueba extends CI_Controller
 		{
 			$this->load->view('login');
 		}
-		$this->load->view('inicio');
+		else
+		{
+			$this->load->view('inicio');
+		}
 
 	}
 
@@ -24,7 +27,7 @@ class Prueba extends CI_Controller
 	{
 		if (!$this->validaSesion())
 		{
-			redirect('prueba/login');
+			redirect('prueba');
 		}
 
 		$this->load->view('eventos');
@@ -37,10 +40,15 @@ class Prueba extends CI_Controller
 
 	public function Ponentes()
 	{
+
 		$this->load->view("ponentes");
 	}
 	public function showPonentes()
 	{
+		if (!$this->validaSesion())
+		{
+			redirect('prueba');
+		}
 		$ponentes=$this->m_congreso->getPonentes();
 
 		$this->load->view('tabla_ponentes',array("datos"=>$ponentes));
@@ -161,6 +169,10 @@ class Prueba extends CI_Controller
 	}
 	function showConferencia()
 	{
+		if (!$this->validaSesion())
+		{
+			redirect('prueba');
+		}
 		$conferencias=$this->m_congreso->getConferencia();
 		foreach ($conferencias as $key => $value) {
 			# code...
@@ -171,6 +183,10 @@ class Prueba extends CI_Controller
 	}
 	public function Talleres()
 	{
+		if (!$this->validaSesion())
+		{
+			redirect('prueba');
+		}
 		$this->load->view("talleres");
 	}
 
